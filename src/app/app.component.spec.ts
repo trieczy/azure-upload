@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'stottle-angular-blob-storage-upload'`, () => {
+  it(`should have as title 'azure-upload'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('stottle-angular-blob-storage-upload');
+    expect(app.title).toEqual('azure-upload');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('stottle-angular-blob-storage-upload app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('azure-upload app is running!');
   });
 });

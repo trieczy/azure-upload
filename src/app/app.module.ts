@@ -1,18 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { BLOB_STORAGE_TOKEN, IAzureStorage } from './azure-storage/azureStorage';
+import { BlobStorageService } from './azure-storage/blob-storage.service';
+
+declare var AzureStorage: IAzureStorage;
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [
+    BlobStorageService,
+    {
+      provide: BLOB_STORAGE_TOKEN,
+      useValue: AzureStorage.Blob
+    }
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
